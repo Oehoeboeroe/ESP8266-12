@@ -1,4 +1,4 @@
-print("server.lua   started")
+print("server.lua is started")
 led_green = 2 -- is OK,GPIO 4 (GPIO5 on layout ..which is wrong, GREEN LED connected
 led_red = 1 -- is OK, GPIO5 pin next to RXD, RED LED connected
 gpio.mode(led_green, gpio.OUTPUT)
