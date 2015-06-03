@@ -62,9 +62,10 @@ end
 function publish_data1()
    if pub_sem == 0 then  -- Is the semaphore set=
      pub_sem = 1  -- Nop. Let's block it
-     m:publish("ESP1","ldr",0,0, function(conn) 
+     ldr=adc.read(0)
+     m:publish("ESP1",ldr,0,0, function(conn) 
         -- Callback function. We've sent the data
-        print("Sending data1: " .. adc.read(0))
+        print("Sending data1: " .. ldr)
         pub_sem = 0  -- Unblock the semaphore
      end)
    end  
